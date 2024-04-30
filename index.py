@@ -3,6 +3,8 @@ from tkinter import messagebox
 from tkinter import ttk
 import database
 
+database.create_table()
+
 jan = Tk()
 jan.title("System - Access Panel")
 jan.geometry("600x300")
