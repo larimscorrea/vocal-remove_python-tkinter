@@ -6,9 +6,8 @@ import database
 database.create_table()
 
 jan = Tk()
-jan.title("System - Access Panel")
+jan.title("Vowels Remove")
 jan.geometry("600x300")
-jan.configure(background="white")
 jan.resizable(width=False, height=False)
 jan.attributes("-alpha", 0.9)
 
@@ -35,7 +34,9 @@ def RemoveVowels():
     word_without_vowels = "".join([char for char in word if char not in vowels])
 
     # Armazenar no banco de dados
-    database.cursor.execute("INSERT INTO Words(Word) VALUES (?)", (word_without_vowels,))
+    database.cursor.execute("INSERT INTO Words(WordWithoutVowels, Vowels) VALUES (?, ?)", (word_without_vowels, ''.join([char for char in word if char in vowels])))
+    database.cursor.execute("INSERT INTO Words(Word) VALUES (?)", (vowels,))
+
     database.conn.commit()
 
     messagebox.showinfo(title="Success", message=f"Word '{word}' without vowels has been stored successfully.")

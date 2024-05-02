@@ -9,7 +9,8 @@ def create_table():
     cursor.execute(""" 
     CREATE TABLE IF NOT EXISTS Words (
         Id INTEGER PRIMARY KEY AUTOINCREMENT,
-        Word TEXT NOT NULL
+        Word TEXT NOT NULL,
+        Vowels TEXT NOT NULL
     );
 """)
 
