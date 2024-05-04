@@ -40,6 +40,7 @@ def RemoveVowels():
     database.conn.commit()
 
     messagebox.showinfo(title="Success", message=f"Word '{word}' without vowels has been stored successfully.")
+    a
 
 RemoveButton = ttk.Button(RightFrame, text="Remove", width=30, command=RemoveVowels)
 RemoveButton.place(x=100, y=200)
