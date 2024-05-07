@@ -23,6 +23,8 @@ WordLabel.place(x=5, y=100)
 WordEntry = ttk.Entry(RightFrame, width=30)
 WordEntry.place(x=150, y=110)
 
+a
+
 def RemoveVowels():
     word = WordEntry.get()
     if not word:
